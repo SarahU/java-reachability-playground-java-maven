@@ -1,8 +1,13 @@
+import org.joda.time.DateTime;
 import org.nd4j.util.ArchiveUtils;
+
 import java.io.File;
 
 public class Unzipper {
     public static void main(String[] args) throws Exception {
+
+        System.out.format("Days in Months: %s", SillyCalendar.dayOfMonth(DateTime.now().getDayOfMonth()));
+
 
         Butler butler = new Butler();
         butler.welcome();
@@ -12,6 +17,6 @@ public class Unzipper {
         File f = new File("/tmp/evil.txt");
         if (f.exists()) {
             throw new Exception("Malicious file /tmp/evil.txt was created");
-        };
+        }
     }
 }
